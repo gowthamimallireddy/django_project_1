@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Contact</title>
+<style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:Poppins;}
+    body{background:linear-gradient(135deg,#6a11cb,#2575fc);min-height:100vh;text-align:center;color:#fff;}
+
+    nav{padding:18px;background:rgba(255,255,255,.18);backdrop-filter:blur(10px);}
+    nav a{color:white;margin:0 18px;text-decoration:none;font-size:20px;font-weight:600;transition:.3s;}
+    nav a:hover{color:#ffe600;transform:scale(1.1);}
+
+    .form-box{
+        width:350px;margin:80px auto;padding:30px;
+        background:rgba(255,255,255,.22);
+        backdrop-filter:blur(12px);
+        border-radius:15px;
+        box-shadow:0 5px 15px rgba(0,0,0,.3);
+    }
+
+    input,textarea{
+        width:100%;padding:12px;margin:10px 0;border:none;border-radius:10px;
+        outline:none;
+    }
+
+    button{
+        padding:12px;width:100%;border:none;
+        border-radius:10px;background:greenyellow;color:black;
+        font-size:18px;font-weight:600;cursor:pointer;transition:.3s;
+    }
+    button:hover{transform:scale(1.08);}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <a href="/">Home</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+    <a href="/login/">Login</a>
+    <a href="/register/">Register</a>
+</nav>
+
+<div class="form-box">
+    <h2>Contact Us</h2>
+    <form method="post">{% csrf_token %}
+        <input type="text" placeholder="Enter Name" required>
+        <input type="email" placeholder="Enter Email" required>
+        <textarea placeholder="Message..." rows="4" required></textarea>
+        <button>Send Message</button>
+    </form>
+</div>
+
+</body>
+</html>
+
+

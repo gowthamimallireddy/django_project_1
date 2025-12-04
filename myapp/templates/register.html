@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Register</title>
+<style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:Poppins;}
+    body{
+        background:linear-gradient(135deg,#6a11cb,#2575fc);
+        display:flex;justify-content:center;align-items:center;
+        min-height:100vh;color:#fff;
+    }
+
+    .box{
+        width:360px;padding:40px;
+        background:rgba(255,255,255,.22);
+        backdrop-filter:blur(10px);
+        border-radius:18px;text-align:center;
+        box-shadow:0 5px 15px rgba(0,0,0,.3);
+    }
+
+    input{width:100%;padding:12px;margin:10px 0;border:none;border-radius:10px;}
+    button{
+        width:100%;padding:12px;background:greenyellow;border:none;color:black;
+        border-radius:10px;font-size:18px;font-weight:600;cursor:pointer;
+        transition:.3s;
+    }
+    button:hover{transform:scale(1.08);}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+    <h2>Create Account</h2>
+    <form method="post">{% csrf_token %}
+        <input type="text" placeholder="Username" required>
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Password" required>
+        <input type="password" placeholder="Confirm Password" required>
+        <button>Register</button>
+    </form>
+</div>
+
+</body>
+</html>
+
+
